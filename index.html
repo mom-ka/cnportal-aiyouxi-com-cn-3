@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>故事 · 爱游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f2f2f2;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+            line-height: 1.7;
+            color: #1e1e1e;
+        }
+        .hero {
+            background: linear-gradient(145deg, #1a2634 0%, #0f1722 100%);
+            color: #eaeef2;
+            padding: 5rem 1.5rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: #f2f2f2;
+            clip-path: ellipse(70% 100% at 50% 100%);
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            word-spacing: 8px;
+            margin-bottom: 0.8rem;
+        }
+        .hero h1 span {
+            font-weight: 500;
+            color: #b0c9e8;
+        }
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: #b8c9da;
+            max-width: 620px;
+            margin: 0 auto 0.5rem;
+            opacity: 0.85;
+        }
+        .hero .meta-line {
+            font-size: 0.9rem;
+            color: #7f92a8;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            display: inline-block;
+            padding-top: 0.6rem;
+        }
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2.4rem 1.2rem 3.5rem;
+        }
+        .intro {
+            background: #ffffff;
+            border-radius: 28px 28px 20px 20px;
+            padding: 2.2rem 2rem 2.6rem;
+            box-shadow: 0 8px 26px rgba(0,0,0,0.03);
+            margin-top: -1.2rem;
+            position: relative;
+            z-index: 2;
+        }
+        .intro p {
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+            text-align: justify;
+        }
+        .intro a {
+            color: #1f5b8a;
+            text-decoration: none;
+            border-bottom: 1px solid #b3cfe5;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .intro a:hover {
+            color: #1a3f5e;
+            border-bottom-color: #1a3f5e;
+        }
+        .feature-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 1.8rem;
+            margin: 2rem 0 1.8rem;
+            list-style: none;
+        }
+        .feature-list li {
+            flex: 1 1 180px;
+            background: #f7f9fc;
+            padding: 1rem 1.2rem;
+            border-radius: 18px;
+            border-left: 3px solid #b3cfe5;
+            font-size: 0.95rem;
+            color: #1e2a3a;
+            transition: background 0.2s;
+        }
+        .feature-list li:hover {
+            background: #eff3f8;
+        }
+        .feature-list li strong {
+            display: block;
+            font-weight: 500;
+            color: #1f5b8a;
+            margin-bottom: 0.2rem;
+        }
+        .scene-note {
+            background: #f3f6fb;
+            padding: 1.4rem 1.6rem;
+            border-radius: 24px;
+            margin: 1.8rem 0 0.8rem;
+            font-style: normal;
+            color: #1f2e3f;
+            border-top: 1px solid #dce5ee;
+            border-bottom: 1px solid #dce5ee;
+        }
+        .scene-note span {
+            background: #dce5ee;
+            padding: 0.1rem 0.7rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            color: #2c4058;
+            margin-right: 0.5rem;
+        }
+        .faq-summary {
+            margin: 2.5rem 0 1rem;
+            padding: 1.2rem 0 0.4rem;
+            border-top: 1px dashed #cbd7e3;
+        }
+        .faq-summary details {
+            margin-bottom: 0.6rem;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+        .faq-summary summary {
+            font-weight: 450;
+            padding: 0.3rem 0;
+            color: #1f5b8a;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .faq-summary summary::before {
+            content: '▸';
+            margin-right: 0.5rem;
+            color: #7f92a8;
+            transition: transform 0.2s;
+        }
+        .faq-summary details[open] summary::before {
+            transform: rotate(90deg);
+        }
+        .faq-summary details p {
+            padding-left: 1.6rem;
+            color: #2e4057;
+            margin: 0.2rem 0 0.8rem;
+        }
+        .closing {
+            margin-top: 2.6rem;
+            text-align: center;
+            padding: 0 0.5rem;
+            font-size: 0.98rem;
+            color: #3d4e62;
+        }
+        .closing small {
+            display: block;
+            margin-top: 0.8rem;
+            opacity: 0.6;
+            font-size: 0.8rem;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #dce5ee;
+            margin: 1rem 0;
+        }
+        @media (max-width: 540px) {
+            .hero {
+                padding: 3.2rem 1.2rem 3rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .intro {
+                padding: 1.6rem 1.2rem 2rem;
+                border-radius: 20px;
+            }
+            .feature-list {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .feature-list li {
+                flex: 1 1 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>故事 · <span>爱游戏</span></h1>
+        <p class="tagline">那些年，手指与键盘之间，藏着一整个安静的午后。</p>
+        <div class="meta-line">—— 一种温和的叙述</div>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+
+            <p>
+                很多年后，你可能已经不记得第一次握着手柄或鼠标时的紧张，却依然能想起某个场景里的光影、一段舒缓的配乐，或者仅仅是屏幕上跳出的那行简短的字幕。游戏从来不只是按键与反馈，它更像一条悄悄延伸的小径，通向另一处自己。而这一切的起点，往往只是一个简单的念头——去探索，去感受。在这个不大的数字角落，我们习惯称之为 <a href="https://cnportal-aiyouxi.com.cn">爱游戏</a>——它不张扬，却足够让人停留。
+            </p>
+
+            <p>
+                这里没有宏大的宣言，只有更贴近日常的陪伴。无论是独自沉浸于解谜的静谧，还是与三五好友共同闯关的喧闹，那份属于“玩”的本真，始终没有被稀释。许多人在忙碌之后，打开熟悉的界面，就像推开一扇不需要钥匙的门，里面是熟悉的节奏、未完成的任务，以及随时可以继续的故事。
+            </p>
+
+            <ul class="feature-list">
+                <li><strong>叙事与留白</strong>不过度设计，给感受留出呼吸的间隙</li>
+                <li><strong>克制但完整</strong>功能性足够，但界面与逻辑都保持简洁</li>
+                <li><strong>陪伴感</strong>像一位不太说话的老友，安静地等在收藏夹里</li>
+                <li><strong>低门槛</strong>不需要复杂教程，跟着直觉就能进入状态</li>
+                <li><strong>可回访</strong>每一次打开，都能接着上次的进度与心情</li>
+            </ul>
+
+            <div class="scene-note">
+                <span>场景</span> 周末午后，窗外有风；一杯茶，一副耳机，屏幕亮起。你不需要成为高手，只需要成为自己。
+            </div>
+
+            <p>
+                也许你是个偶尔玩两局的普通人，也许你心中藏着一段关于某个像素世界的记忆。这都不重要。重要的是，你仍然愿意用一小段完整的时间，去体验另一种节奏。而这样的时刻，<a href="https://cnportal-aiyouxi.com.cn">爱游戏</a>始终在场，不催促，不打扰。
+            </p>
+
+            <div class="faq-summary">
+                <details>
+                    <summary>FAQ 摘要：爱游戏本身是一个平台吗？</summary>
+                    <p>它更像一个主题方向与内容聚合的称谓，提供与游戏相关的信息、视角和入口，聚焦于“玩”本身的温和表达。具体内容可以通过上方链接进一步了解。</p>
+                </details>
+                <details>
+                    <summary>FAQ 摘要：我能在这里找到哪些类型的游戏？</summary>
+                    <p>涵盖但不限于独立作品、经典重访、轻度策略与叙事解谜，整体偏重内在体验与情感连接，而非单纯追求强度或竞技。</p>
+                </details>
+                <details>
+                    <summary>FAQ 摘要：需要注册或付费才能使用吗？</summary>
+                    <p>浏览与阅读相关内容无需注册。部分附加功能或社区互动可能涉及基础账户，但始终以免费与低门槛为前提。</p>
+                </details>
+            </div>
+
+            <hr>
+
+            <div class="closing">
+                <p>节奏不必太快，故事不必太满。<br>有时候，游戏只是提醒我们：还可以再用一点好奇，去触碰世界。</p>
+                <small>一种安静的回答，写在屏幕之间。</small>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
