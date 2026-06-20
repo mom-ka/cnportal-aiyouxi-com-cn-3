@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>云开体育 · 发现你的运动节奏</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f2f8fa;
+      color: #1d2b36;
+      line-height: 1.6;
+      padding: 1.2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 主视觉 — 柔和渐变 + 微型动画 */
+    .hero {
+      background: linear-gradient(135deg, #d0ece8 0%, #b1dcd7 50%, #90ccc3 100%);
+      border-radius: 2rem;
+      padding: 2.8rem 2rem;
+      margin-bottom: 2.4rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(60, 120, 110, 0.08);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .hero:hover {
+      box-shadow: 0 12px 30px rgba(45, 110, 95, 0.12);
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: #0f3b33;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #1e4f44;
+      background: rgba(255, 255, 255, 0.45);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      backdrop-filter: blur(2px);
+    }
+
+    /* 网格卡片区 — 蓝绿色点缀 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+      margin-bottom: 2.6rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 1.6rem;
+      padding: 1.8rem 1.2rem 1.6rem;
+      box-shadow: 0 4px 12px rgba(80, 140, 125, 0.06);
+      border: 1px solid #dcebe8;
+      transition: transform 0.2s, box-shadow 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(55, 130, 115, 0.1);
+      border-color: #88ccc2;
+    }
+
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: #caeae3;
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      color: #1a6b5c;
+    }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #104a3e;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    .card p {
+      color: #2e4440;
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      flex: 1;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #e3f4ef;
+      color: #166253;
+      border-radius: 50px;
+      padding: 0.15rem 0.8rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      margin-top: 0.4rem;
+      align-self: flex-start;
+    }
+
+    /* 适合人群 + 自然链接段落 */
+    .section-people {
+      background: #ffffffdd;
+      backdrop-filter: blur(4px);
+      border-radius: 2rem;
+      padding: 2rem 1.8rem;
+      margin-bottom: 2rem;
+      border: 1px solid #baded7;
+    }
+
+    .section-people h2 {
+      font-size: 1.6rem;
+      font-weight: 450;
+      color: #0e453a;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .people-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .people-item {
+      background: #ecf7f3;
+      padding: 0.4rem 1.2rem 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      color: #144f42;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .people-item::before {
+      content: "·";
+      font-weight: 700;
+      color: #2f9d88;
+      margin-right: 0.5rem;
+      font-size: 1.4rem;
+    }
+
+    .link-sentence {
+      margin-top: 1.4rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #c1ddd5;
+      font-size: 1rem;
+      color: #1d3b33;
+    }
+
+    .link-sentence a {
+      color: #156454;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid #a3cec3;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .link-sentence a:hover {
+      color: #0a3d31;
+      border-bottom-color: #3bbb9c;
+    }
+
+    /* FAQ 摘要 — 简单折叠感 */
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 1.6rem;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 2rem;
+      border-left: 4px solid #6dc1b2;
+      box-shadow: 0 2px 8px rgba(50, 110, 95, 0.04);
+    }
+
+    .faq-mini h3 {
+      font-weight: 450;
+      font-size: 1.15rem;
+      color: #0f493d;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-item {
+      margin-bottom: 0.7rem;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      color: #175a4a;
+      cursor: default;
+      display: flex;
+      align-items: baseline;
+      gap: 0.3rem;
+    }
+
+    .faq-question::before {
+      content: "❓";
+      font-size: 0.85rem;
+      margin-right: 0.3rem;
+      opacity: 0.7;
+    }
+
+    .faq-answer {
+      color: #2a4b41;
+      padding-left: 1.5rem;
+      font-size: 0.92rem;
+      margin-top: 0.15rem;
+    }
+
+    /* 底部静默提示 */
+    .quiet-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #4f7168;
+      padding: 1.2rem 0.6rem;
+      border-top: 1px solid #bcd9d1;
+      margin-top: 1.2rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      body {
+        padding: 0.8rem;
+      }
+
+      .hero {
+        padding: 2rem 1.2rem;
+        border-radius: 1.4rem;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .hero p {
+        font-size: 0.95rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .card-grid {
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.4rem 1rem;
+      }
+
+      .section-people {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .people-list {
+        gap: 0.6rem 1rem;
+      }
+
+      .faq-mini {
+        padding: 1.2rem 1rem;
+      }
+
+      .link-sentence {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 1.6rem 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .card h3 {
+        font-size: 1.1rem;
+      }
+
+      .people-item {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HERO 主视觉 -->
+    <div class="hero">
+      <h1>云开 · 让运动更自在</h1>
+      <p>不论你处于哪个阶段，都能找到适合自己的节奏。</p>
+    </div>
+
+    <!-- 用途卡片 (信息卡片式核心) -->
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon">🏃</div>
+        <h3>日常训练记录</h3>
+        <p>快速追踪每次跑步、骑行或力量训练，无需复杂设定，打开就能用。</p>
+        <span class="tag">轻量 · 直观</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>数据概览与趋势</h3>
+        <p>用简洁的图表呈现周、月运动量，帮你发现自己的进步与规律。</p>
+        <span class="tag">可视化 · 无干扰</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>目标拆解提醒</h3>
+        <p>设定小目标，系统会温柔提醒你保持活跃，但不会过度打扰。</p>
+        <span class="tag">柔性激励</span>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌱</div>
+        <h3>社区氛围</h3>
+        <p>和同频的人分享心得，互相鼓励，但这里没有排行榜压力。</p>
+        <span class="tag">陪伴 · 低竞争</span>
+      </div>
+    </div>
+
+    <!-- 适合人群 + 自然链接段落 -->
+    <div class="section-people">
+      <h2>☀️ 适合这样的人群</h2>
+      <div class="people-list">
+        <span class="people-item">运动新手，想要温和起步</span>
+        <span class="people-item">恢复期训练者，需要记录节奏</span>
+        <span class="people-item">忙碌上班族，追求高效运动管理</span>
+        <span class="people-item">喜欢简单工具的人</span>
+        <span class="people-item">希望保持长期习惯的运动爱好者</span>
+      </div>
+      <div class="link-sentence">
+        如果你正在寻找一个不嘈杂、不复杂的运动陪伴工具，不妨试试 
+        <a href="https://in-yunkaisports.com">云开体育</a>。
+        页面设计干净，没有多余弹窗，能帮你更自在地关注运动本身。
+      </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="faq-mini">
+      <h3>❄️ 你可能想知道</h3>
+      <div class="faq-item">
+        <div class="faq-question">需要注册才能使用吗？</div>
+        <div class="faq-answer">基础浏览和部分功能无需注册，保存个人数据时建议创建轻量账户。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">数据会同步到其他应用吗？</div>
+        <div class="faq-answer">目前支持手动导出为通用格式，未来会逐步开放更多接口。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">是否适合团体或教练使用？</div>
+        <div class="faq-answer">个人版已覆盖大多数场景，教练可用来观察学员的周运动趋势。</div>
+      </div>
+    </div>
+
+    <!-- 低调的脚注（无链接） -->
+    <div class="quiet-note">
+      保持呼吸，保持移动 · 云开体育
+    </div>
+  </div>
+</body>
+</html>
