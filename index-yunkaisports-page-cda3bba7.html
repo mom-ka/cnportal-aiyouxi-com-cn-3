@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>云开体育 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f9f6f0;
+      font-family: 'Georgia', 'Times New Roman', '宋体', 'SimSun', serif;
+      color: #2e2b27;
+      line-height: 1.7;
+      padding: 2rem 1.5rem;
+    }
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fdfcf9;
+      padding: 2.5rem 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+    h1 {
+      font-weight: 400;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+      color: #1f1c19;
+      border-left: 4px solid #b8a38b;
+      padding-left: 1rem;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #7a6f64;
+      margin-bottom: 2rem;
+      padding-left: 1.4rem;
+      font-style: italic;
+    }
+    .hero-box {
+      background: #efeae1;
+      padding: 1.8rem 2rem;
+      border-radius: 10px;
+      margin-bottom: 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hero-text {
+      flex: 1 1 60%;
+    }
+    .hero-text p {
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-text .highlight {
+      display: inline-block;
+      background: #dacfc1;
+      padding: 0.1rem 0.6rem;
+      border-radius: 4px;
+      font-weight: 400;
+    }
+    .hero-link {
+      flex: 0 0 auto;
+      background: #2e2b27;
+      color: #f9f6f0;
+      padding: 0.6rem 1.4rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+      margin-top: 0.6rem;
+    }
+    .hero-link:hover {
+      background: #4d453e;
+    }
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 400;
+      border-bottom: 1px solid #ddd6cb;
+      padding-bottom: 0.3rem;
+      margin: 2rem 0 1rem;
+      color: #3d362f;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .card {
+      background: #f7f3ec;
+      padding: 1.2rem 1.2rem 1rem;
+      border-radius: 8px;
+      border-left: 3px solid #c8b9a7;
+    }
+    .card h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #2e2b27;
+    }
+    .card p {
+      font-size: 0.92rem;
+      color: #4b443c;
+    }
+    .quote-note {
+      background: #eae3d9;
+      padding: 1rem 1.6rem;
+      border-radius: 8px;
+      margin: 1.6rem 0;
+      font-style: italic;
+      position: relative;
+    }
+    .quote-note::before {
+      content: "📌";
+      margin-right: 0.6rem;
+      font-style: normal;
+    }
+    .faq-item {
+      border-bottom: 1px dashed #d6cec1;
+      padding: 0.8rem 0;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #3a332b;
+    }
+    .faq-a {
+      margin-top: 0.2rem;
+      font-size: 0.93rem;
+      color: #5b5248;
+    }
+    .footer-links {
+      margin-top: 2.8rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #ddd6cb;
+      font-size: 0.9rem;
+      color: #6b6258;
+    }
+    .footer-links a {
+      color: #2e2b27;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #b8a38b;
+    }
+    .footer-links a:hover {
+      color: #000;
+    }
+    .small-meta {
+      margin-top: 0.8rem;
+      font-size: 0.78rem;
+      color: #9a8f82;
+    }
+    @media (max-width: 600px) {
+      body { padding: 1rem 0.8rem; }
+      .page { padding: 1.6rem 1.2rem; }
+      h1 { font-size: 1.6rem; }
+      .card-grid { grid-template-columns: 1fr; }
+      .hero-box { flex-direction: column; align-items: flex-start; }
+      .hero-link { align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <h1>云开体育</h1>
+  <div class="subhead">一份简明指南 · 从访问到理解</div>
+
+  <!-- hero 区 -->
+  <div class="hero-box">
+    <div class="hero-text">
+      <p><span class="highlight">云开体育</span> 并不是一个陌生的名字。如果你正在寻找一个兼具内容广度和日常可及的平台，它或许恰好符合你的期待。</p>
+      <p style="margin-top:0.3rem;">以下内容不构成推荐，更像是一份背景笔记与访问备忘。</p>
+    </div>
+    <a href="https://index-yunkaisports.com" class="hero-link">云开体育</a>
+  </div>
+
+  <!-- 优势区 -->
+  <div class="section-title">几个值得留意的特点</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>信息结构清晰</h3>
+      <p>无论是赛事浏览还是内容检索，界面的分区逻辑偏重直觉，减少不必要的跳转层级。</p>
+    </div>
+    <div class="card">
+      <h3>多端适配自然</h3>
+      <p>在手机与桌面之间切换时，布局与文字大小变化平滑，没有明显断裂感。</p>
+    </div>
+    <div class="card">
+      <h3>更新节奏稳定</h3>
+      <p>内容维护有固定周期，不会出现长期未更新的板块，时效性相对可靠。</p>
+    </div>
+    <div class="card">
+      <h3>视觉干扰较少</h3>
+      <p>页面没有过度装饰或频繁弹窗，主要信息区域保持干净，阅读压力小。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 -->
+  <div class="section-title">使用环境与访问提示</div>
+  <p>实际使用时，网络环境与浏览器版本会影响加载表现。根据多数反馈，以下几条可以作为参考：</p>
+  <ul style="padding-left:1.5rem; margin:0.8rem 0 1.2rem; color:#4b443c;">
+    <li>建议使用 Chrome、Edge 或 Safari 的较新版本，避免兼容性提示。</li>
+    <li>部分区域可能需要稳定的网络连接，图片与数据加载会更流畅。</li>
+    <li>如果你习惯使用隐私模式或内容拦截插件，个别样式可能偏移，关闭后可恢复。</li>
+  </ul>
+  <div class="quote-note">
+    需要留意的是，任何在线平台都存在一定的不确定性。访问前确保设备与网络环境安全，并根据自身情况做出判断。
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="section-title">常见疑问摘要</div>
+  <div class="faq-item">
+    <div class="faq-q">问：是否需要注册才能浏览大部分内容？</div>
+    <div class="faq-a">多数信息版块对访客开放，部分功能或互动区域可能需要账号。建议先浏览公开内容，再决定是否注册。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">问：移动端与桌面端体验差异大吗？</div>
+    <div class="faq-a">整体差异不大，但桌面端排版更宽裕，适合长时间阅读；移动端更侧重快捷操作。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">问：内容更新频率如何？</div>
+    <div class="faq-a">根据观察，主要栏目保持每周数次更新的节奏，重大活动期间会相应加密。</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">问：是否有官方联系方式或帮助中心？</div>
+    <div class="faq-a">页面底部一般会放置联系入口，也可以通过站内指引找到常见问题汇总。</div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="footer-links">
+    <p>本文档仅作为背景介绍，不构成任何形式的引导。如需访问原站，可直接前往 <a href="https://index-yunkaisports.com">云开体育</a>。根据个人需求与网络环境合理安排使用。</p>
+    <p class="small-meta">内容编制 · 仅供示意 / 不具商业意图</p>
+  </div>
+</div>
+</body>
+</html>
