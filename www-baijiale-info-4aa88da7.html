@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百家乐 · 专题知识页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', '宋体', serif;
+            background-color: #f5f3f0;
+            color: #2e2b28;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* hero 横幅——杂志风大标题 */
+        .hero {
+            background: #eae6df url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMzAgM2wxMCAyMC0yMCA1IDIwIDUtMTAgMjAgMTAtMjAgMjAtNS0yMC01IDEwLTIweiIgZmlsbD0iI2QyYzhiYyIgb3BhY2l0eT0iMC4wNyIvPjwvc3ZnPg==') repeat;
+            padding: 3rem 2.5rem;
+            border-radius: 28px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+            border: 1px solid #ddd6cc;
+            margin-bottom: 2.8rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            color: #3b3630;
+            border-bottom: 2px dashed #b8aa9a;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero .sub {
+            font-size: 1.05rem;
+            color: #6b6057;
+            max-width: 600px;
+            margin: 0.6rem auto 0;
+            font-style: italic;
+            border-top: 1px solid #d3c9be;
+            padding-top: 1rem;
+        }
+
+        /* 卡片体系 */
+        .card {
+            background: #fcfaf7;
+            border: 1px solid #e2dad0;
+            border-radius: 22px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.05);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #4a423b;
+            border-left: 4px solid #b7a48b;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #5f554b;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dotted #d8cfc4;
+            padding-bottom: 0.2rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            font-size: 1.02rem;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 1.8rem 0 0.5rem;
+        }
+
+        .flex-row .item {
+            flex: 1 1 200px;
+            background: #f3efe9;
+            padding: 1rem 1.4rem;
+            border-radius: 18px;
+            border: 1px solid #ded3c7;
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6);
+        }
+
+        .flex-row .item strong {
+            display: block;
+            font-weight: 500;
+            font-size: 1.05rem;
+            color: #4d3f32;
+            margin-bottom: 0.4rem;
+        }
+
+        .faq-mini {
+            background: #f6f2ec;
+            padding: 0.8rem 1.5rem;
+            border-radius: 40px;
+            margin: 1.6rem 0 0.2rem;
+            border: 1px solid #dacfc2;
+        }
+
+        .faq-mini dt {
+            font-weight: 500;
+            color: #4e4238;
+            margin-top: 0.6rem;
+        }
+
+        .faq-mini dd {
+            margin-left: 1.2rem;
+            color: #5a4f44;
+            font-size: 0.97rem;
+        }
+
+        .faq-mini dt:first-of-type {
+            margin-top: 0;
+        }
+
+        .btn-soft {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #b7a691;
+            color: #4f443a;
+            padding: 0.4rem 1.8rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.15s;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-soft:hover {
+            background: #ddd3c6;
+            border-color: #8f7d6b;
+        }
+
+        .footer-note {
+            margin-top: 3rem;
+            padding: 1.8rem 2rem;
+            background: #eae4db;
+            border-radius: 60px 20px 60px 20px;
+            border: 1px solid #cec2b4;
+            text-align: center;
+            font-size: 1rem;
+            color: #3e3832;
+        }
+
+        .footer-note a {
+            color: #4d3d2e;
+            text-decoration: none;
+            border-bottom: 1px solid #a08d7a;
+            padding-bottom: 1px;
+            font-weight: 500;
+        }
+
+        .footer-note a:hover {
+            color: #2d221a;
+            border-bottom-color: #2d221a;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 700px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+                letter-spacing: 2px;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+            .flex-row {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .footer-note {
+                padding: 1.2rem 1rem;
+                border-radius: 30px 10px 30px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .hero .sub {
+                font-size: 0.92rem;
+            }
+            .card h2 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero 横幅 杂志专题 -->
+    <div class="hero">
+        <h1>百家乐 · 查询对照</h1>
+        <div class="sub">从规则辨析到延伸笔记 · 日常知识卡片</div>
+    </div>
+
+    <!-- 第一段：背景与日常查询 -->
+    <div class="card">
+        <h2>从一张查询表开始</h2>
+        <p>在桌面博弈领域，<strong>百家乐</strong>经常出现在规则对比和策略梳理的笔记中。它的起源可追溯到十五世纪的意大利，后经法国传入亚洲，如今已是全球赌场中最常被查询的纸牌项目之一。不少爱好者最初接触<a href="https://www--baijiale.com">百家乐</a>，并非为了下注，而是被它极简的比牌逻辑和不对称的赔率结构所吸引——闲家、庄家、和局，三种结果的概率分布构成了最基础的认知框架。</p>
+        <p>很多人把百家乐当作一种“对照游戏”：通过记录路单、观察趋势，在重复的循环中寻找规律。尽管从数学上看每一局独立，但延伸阅读中关于“缆法”和“注码管理”的讨论，依然为这个古老的游戏增添了层层知识纵深。</p>
+    </div>
+
+    <!-- 第二段：自然介绍 + 特点卡片 -->
+    <div class="card">
+        <h2>规则、变体与常见场景</h2>
+        <p>标准百家乐使用八副牌，荷官按照固定补牌规则发牌，玩家只需选择下注区域。由于庄家拥有略微的规则优势（约1.06%），而闲家优势约为1.24%，长期看庄家胜率稍高——这也是许多对照表里反复出现的数字。</p>
+
+        <div class="flex-row">
+            <div class="item">
+                <strong>迷你百家乐</strong>
+                <span style="font-size: 0.95rem;">低限注、快速节奏，常见于线上模拟与新手查询场景。</span>
+            </div>
+            <div class="item">
+                <strong>免佣百家乐</strong>
+                <span style="font-size: 0.95rem;">庄家胜不抽5%佣金，但“庄6点”赔付减半，赔率结构不同。</span>
+            </div>
+            <div class="item">
+                <strong>超级六 / 幸运六</strong>
+                <span style="font-size: 0.95rem;">额外押注庄家以6点获胜，属于延伸彩池，赔率可达12倍。</span>
+            </div>
+        </div>
+        <p style="margin-top: 1.2rem;">在实际应用场景中，人们常用百家乐作为“概率对照实验”：记录一百手牌局，统计庄闲出现频率，再与理论值比较。这种延伸阅读性质的练习，让游戏超越了娱乐本身，成为一种观察随机性的窗口。</p>
+    </div>
+
+    <!-- 第三段：延伸阅读与FAQ片段 -->
+    <div class="card">
+        <h2>延伸阅读 · 常见问题摘要</h2>
+        <p>不少查询者会在笔记中记录以下对照点，作为进一步了解的起点：</p>
+        <dl class="faq-mini">
+            <dt>▸ 百家乐中“路”的意义是什么？</dt>
+            <dd>路单（珠盘路、大路、小路等）是历史结果的图形化排列，用于辅助观察短期趋势，但不改变独立事件本质。</dd>
+            <dt>▸ 为什么庄家赔率要抽水？</dt>
+            <dd>庄家胜率略高于闲家，赌场通过抽取5%佣金（部分玩法例外）来平衡双方的实际回报率。</dd>
+            <dt>▸ 线上与线下百家乐规则完全一致吗？</dt>
+            <dd>多数线上版本严格遵循实体赌场补牌规则，但洗牌方式、切牌位置可能略有差异，可对照具体游戏说明。</dd>
+        </dl>
+        <p style="margin-top: 0.8rem;">对于希望从对照角度深入的人来说，不妨先理解基本赔率与标准差，再去阅读有关“百家乐循环”的讨论文章。许多延伸资料都围绕一个核心：长期期望为负，但每次独立对局的波动本身值得观察。</p>
+    </div>
+
+    <!-- 页尾访问提示 -->
+    <div class="footer-note">
+        <p style="margin-bottom: 0.6rem; font-size: 1.05rem;">📖 知识延伸 · 日常参考</p>
+        <p>如需查阅更完整的规则对照、术语表与历史背景，可访问 <a href="https://www--baijiale.com">百家乐</a> 专题页面，其中收录了从概率表到变种玩法的系统笔记。</p>
+        <p style="margin-top: 0.8rem; font-size: 0.9rem; color: #6a5c4e;">—— 本页为杂志式知识卡片，内容仅供学习对照，不构成任何建议。</p>
+    </div>
+
+</div>
+</body>
+</html>
